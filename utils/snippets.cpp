@@ -64,6 +64,10 @@ int main() {
         return a.second < b.second; // ordenar por segundo elemento
     });
 
+    // ---- funcion iota para rellenar un vector ascendentemente ----
+    vector<int> q(10, 0);
+    iota(q.begin(), q.end(), 0); // q = {0, 1, 2, 3...., 9}
+
     // ---- gcd / lcm builtin (C++17) ----
     int g = __gcd(12, 18);
     long long l = (12LL * 18LL) / __gcd(12, 18);
