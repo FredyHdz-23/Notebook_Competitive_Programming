@@ -39,7 +39,7 @@ struct SuffixArray {
 
     void buildLCP() {
         lcp.assign(n, 0);
-        vector<int> inv(n);
+        vi inv(n);
         for (int i = 0; i < n; i++) inv[sa[i]] = i;
 
         int k = 0;
