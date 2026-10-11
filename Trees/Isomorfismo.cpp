@@ -1,4 +1,5 @@
 #include <template.h>
+//aho hopcroft ullman
 
 map<vi,int> mp;   // global: así los IDs son comparables entre árboles distintos
 // ID canónico del árbol g enraizado en root (iterativo, sin riesgo de stack overflow)
