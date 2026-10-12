@@ -1,4 +1,5 @@
 #include <template.h>
+// O(k^3 log n)
 
 typedef vector<vll> Mat;
 Mat mul(const Mat &a, const Mat &b) {
