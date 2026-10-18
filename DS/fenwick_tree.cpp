@@ -4,19 +4,19 @@
 using namespace std;
 typedef long long ll;
 
-struct Fenwick {
+struct BIT {
     int n;
-    vector<ll> tree;
+    vll tree;
 
-    Fenwick(int n) : n(n), tree(n + 1, 0) {}
+    BIT(int n = 0) : n(n), tree(n + 1, 0) {}
 
-    void update(int i, ll delta) {
-        for (; i <= n; i += i & (-i)) tree[i] += delta;
+    void update(int i, ll delta = 1) {
+        for (; i <= n; i += i & -i) tree[i] += delta;
     }
 
     ll query(int i) { // suma [1, i]
         ll s = 0;
-        for (; i > 0; i -= i & (-i)) s += tree[i];
+        for (; i > 0; i -= i & -i) s += tree[i];
         return s;
     }
 
