@@ -1,8 +1,6 @@
 // Fenwick Tree (BIT) - suma de prefijos con update puntual
 // O(log n) por operacion
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long ll;
+#include <template.h>
 
 struct BIT {
     int n; vll tree;
