@@ -1,5 +1,5 @@
 #include <template.h>
-(DFS) O(E*F)
+//(DFS) O(E*F)
 
 const int N=1e5+5, M=4e5+5; const ll INF=1e18;
 vi g[N]; int to[M], ec; ll cp[M];
