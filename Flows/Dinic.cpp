@@ -33,3 +33,15 @@ ll dinic(int s,int t,int n){
     while(bfs(s,t,n)){ fill(it,it+n+1,0); while(x=ddfs(s,t,INF)) fl+=x; }
     return fl;
 }
+
+vector<pii> mincut(int s,int n){ // llamar DESPUÉS del flujo; devuelve las aristas (a,b) del corte
+    vector<char> v(n+1,0); queue<int> q; q.push(s); v[s]=1;
+    while(sz(q)){
+        int u=q.front(); q.pop();
+        for(int id:g[u]) if(cp[id]>0 && !v[to[id]]) v[to[id]]=1, q.push(to[id]);
+    }
+    vector<pii> r;
+    for(int a=1;a<=n;a++) if(v[a])
+        for(int id:g[a]) if(!(id&1) && !v[to[id]]) r.pb({a,to[id]});
+    return r;
+}
